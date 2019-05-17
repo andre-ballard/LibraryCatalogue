@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{7B4175BB-8319-4637-A5C6-C2A6F05953F9}|">
+  <MonoDevelop.Ide.ItemProperties.LibraryCatalogue.Client PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibraryCatalogue.Client/Models/Query.cs">
+    <Files>
+      <File FileName="LibraryCatalogue.Client/Models/Book.cs" Line="6" Column="43" />
+      <File FileName="LibraryCatalogue.Client/Models/Item.cs" Line="6" Column="43" />
+      <File FileName="LibraryCatalogue.Client/Models/Movie.cs" Line="7" Column="40" />
+      <File FileName="LibraryCatalogue.Client/Models/Magazine.cs" Line="6" Column="43" />
+      <File FileName="LibraryCatalogue.Client/Models/Library.cs" Line="11" Column="20" />
+      <File FileName="LibraryCatalogue.Client/Controllers/HomeController.cs" Line="14" Column="23" />
+      <File FileName="LibraryCatalogue.Client/Views/Home/Index.cshtml" Line="2" Column="1" />
+      <File FileName="LibraryCatalogue.Client/Models/Query.cs" Line="6" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LibraryCatalogue" expanded="True">
+            <Node name="LibraryCatalogue.Client" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Query.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LibraryCatalogue.Client.Tests FirstBuild="True" />
+</Properties>
