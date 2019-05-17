@@ -1,4 +1,33 @@
-﻿@model LibraryCatalogue.Client.Models.Query 
+﻿@model LibraryCatalogue.Client.Models.Query
 <h2>Library!</h2>
 
-@Html.DropDownListFor()
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+<div>
+    @Html.LabelFor(m => m.item)
+    @Html.DropDownListFor(m => m.item, new List<SelectListItem>
+    {
+        new SelectListItem() {Text = "Movie", Value="Movie"},
+        new SelectListItem() {Text = "Book", Value="Book"},
+        new SelectListItem() {Text = "Magazine", Value="Magazine"}
+    })
+</div>
+
+<div>
+    @Html.LabelFor(m => m.parameter)
+    @Html.DropDownListFor(m => m.parameter, new List<SelectListItem>
+{
+            new SelectListItem() {Text = "Title", Value="Title"},
+            new SelectListItem() {Text = "Author", Value="Author"},
+            new SelectListItem() {Text = "Subject", Value="Subject"}
+})
+</div>
+
+<div>
+@Html.LabelFor(m => m.query)
+@Html.TextBoxFor(m => m.query)
+</div>
+
+<button type="submit">Submit</button>
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+
 namespace LibraryCatalogue.Client.Models
 {
     public class Movie : Item

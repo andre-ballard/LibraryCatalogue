@@ -1,6 +1,8 @@
-﻿using System;
+﻿
+
 namespace LibraryCatalogue.Client.Models
 {
+    
     public class Book : Item
     {
         public string Author { get; set; }

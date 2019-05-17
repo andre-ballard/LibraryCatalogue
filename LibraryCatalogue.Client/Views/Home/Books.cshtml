@@ -1,0 +1,61 @@
+﻿@model LibraryCatalogue.Client.Models.Library
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Books</title>
+</head>
+<body>
+    @if (Model.Books.Count != 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Author
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Genre
+                    </th>
+                    <th>
+                        Publisher
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.Books)
+                {
+                <tr>
+                    <td>
+                        @obj.Author
+                    </td>
+                    <td>
+                        @obj.Title
+                    </td>
+                    <td>
+                        @obj.Subject
+                    </td>
+                    <td>
+                        @obj.Publisher
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else {
+        <div>
+            No books Found
+        </div>
+    }<div>
+    </div>
+</body>
+</html>

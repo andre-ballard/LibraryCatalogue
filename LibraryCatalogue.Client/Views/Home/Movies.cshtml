@@ -1,0 +1,61 @@
+﻿@model LibraryCatalogue.Client.Models.Library
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Movies</title>
+</head>
+<body>
+    @if (Model.Movies.Count != 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Director
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Subject
+                    </th>
+                    <th>
+                        Length
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.Movies)
+                {
+                    <tr>
+                        <td>
+                            @obj.Director
+                        </td>
+                        <td>
+                            @obj.Title
+                        </td>
+                        <td>
+                            @obj.Subject
+                        </td>
+                        <td>
+                            @obj.Length
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else {
+        <div>
+            No Movies Found!
+        </div>
+    }<div>
+    </div>
+</body>
+</html>

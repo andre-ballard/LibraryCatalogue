@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,6 +9,18 @@
     <RootNamespace>LibraryCatalogue.Client</RootNamespace>
     <AssemblyName>LibraryCatalogue.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -61,18 +79,83 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Content\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Interfaces\ILibrary.cs" />
+    <Compile Include="Migrations\201905170332212_initial load.cs" />
+    <Compile Include="Migrations\201905170332212_initial load.Designer.cs">
+      <DependentUpon>201905170332212_initial load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170429210_load movie data.cs" />
+    <Compile Include="Migrations\201905170429210_load movie data.Designer.cs">
+      <DependentUpon>201905170429210_load movie data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171654396_book and movie load.cs" />
+    <Compile Include="Migrations\201905171654396_book and movie load.Designer.cs">
+      <DependentUpon>201905171654396_book and movie load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171917143_add book data.cs" />
+    <Compile Include="Migrations\201905171917143_add book data.Designer.cs">
+      <DependentUpon>201905171917143_add book data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171919489_adding more books.cs" />
+    <Compile Include="Migrations\201905171919489_adding more books.Designer.cs">
+      <DependentUpon>201905171919489_adding more books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172001055_updated db objects.cs" />
+    <Compile Include="Migrations\201905172001055_updated db objects.Designer.cs">
+      <DependentUpon>201905172001055_updated db objects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172012452_added default schema.cs" />
+    <Compile Include="Migrations\201905172012452_added default schema.Designer.cs">
+      <DependentUpon>201905172012452_added default schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172030465_removed books and magazine objects.cs" />
+    <Compile Include="Migrations\201905172030465_removed books and magazine objects.Designer.cs">
+      <DependentUpon>201905172030465_removed books and magazine objects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172032129_re-add book migrations.cs" />
+    <Compile Include="Migrations\201905172032129_re-add book migrations.Designer.cs">
+      <DependentUpon>201905172032129_re-add book migrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172048501_removed books.cs" />
+    <Compile Include="Migrations\201905172048501_removed books.Designer.cs">
+      <DependentUpon>201905172048501_removed books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172049192_add books.cs" />
+    <Compile Include="Migrations\201905172049192_add books.Designer.cs">
+      <DependentUpon>201905172049192_add books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172156041_add magazine dbset.cs" />
+    <Compile Include="Migrations\201905172156041_add magazine dbset.Designer.cs">
+      <DependentUpon>201905172156041_add magazine dbset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172220046_removed magazines and books.cs" />
+    <Compile Include="Migrations\201905172220046_removed magazines and books.Designer.cs">
+      <DependentUpon>201905172220046_removed magazines and books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172227414_re-add Books entity.cs" />
+    <Compile Include="Migrations\201905172227414_re-add Books entity.Designer.cs">
+      <DependentUpon>201905172227414_re-add Books entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905172235209_add more books.cs" />
+    <Compile Include="Migrations\201905172235209_add more books.Designer.cs">
+      <DependentUpon>201905172235209_add more books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\LibraryContext.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Magazine.cs" />
     <Compile Include="Models\Library.cs" />
@@ -88,6 +171,59 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905170332212_initial load.resx">
+      <DependentUpon>201905170332212_initial load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170429210_load movie data.resx">
+      <DependentUpon>201905170429210_load movie data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171654396_book and movie load.resx">
+      <DependentUpon>201905171654396_book and movie load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171917143_add book data.resx">
+      <DependentUpon>201905171917143_add book data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171919489_adding more books.resx">
+      <DependentUpon>201905171919489_adding more books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172001055_updated db objects.resx">
+      <DependentUpon>201905172001055_updated db objects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172012452_added default schema.resx">
+      <DependentUpon>201905172012452_added default schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172030465_removed books and magazine objects.resx">
+      <DependentUpon>201905172030465_removed books and magazine objects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172032129_re-add book migrations.resx">
+      <DependentUpon>201905172032129_re-add book migrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172048501_removed books.resx">
+      <DependentUpon>201905172048501_removed books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172049192_add books.resx">
+      <DependentUpon>201905172049192_add books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172156041_add magazine dbset.resx">
+      <DependentUpon>201905172156041_add magazine dbset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172220046_removed magazines and books.resx">
+      <DependentUpon>201905172220046_removed magazines and books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172227414_re-add Books entity.resx">
+      <DependentUpon>201905172227414_re-add Books entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172235209_add more books.resx">
+      <DependentUpon>201905172235209_add more books.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Movies.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Books.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
@@ -95,5 +231,22 @@
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55379/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v15.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>
