@@ -27,6 +27,7 @@
 <div>
 @Html.LabelFor(m => m.query)
 @Html.TextBoxFor(m => m.query)
+@Html.ValidationMessageFor(m=>m.query)
 </div>
 
 <button type="submit">Submit</button>

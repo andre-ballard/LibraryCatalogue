@@ -152,6 +152,10 @@
     <Compile Include="Migrations\201905172235209_add more books.Designer.cs">
       <DependentUpon>201905172235209_add more books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905172308153_make title required.cs" />
+    <Compile Include="Migrations\201905172308153_make title required.Designer.cs">
+      <DependentUpon>201905172308153_make title required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Item.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905172235209_add more books.resx">
       <DependentUpon>201905172235209_add more books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905172308153_make title required.resx">
+      <DependentUpon>201905172308153_make title required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -20,11 +20,17 @@ namespace LibraryCatalogue.Client.Controllers
         [HttpPost]
         public ActionResult Index(Query model)
         {
-            if (model.item == "Magazine")
+            if (ModelState.IsValid)
             {
-                return Content("Coming soon..");
+                if (model.item == "Magazine")
+                {
+                    return Content("Coming soon..");
+                }
+                return searchItem(model);
             }
-           return searchItem(model);
+            else {
+                return View(model);
+            }
         }
     }
 }
