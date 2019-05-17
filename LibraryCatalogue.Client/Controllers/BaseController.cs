@@ -10,12 +10,8 @@ namespace LibraryCatalogue.Client.Controllers
 {
     public class BaseController : Controller
     {
-        // GET: Base
-        protected Library catalogue = new Library();
-
         public ActionResult searchItem(Query model)
         {
-            var library = new Library();
             var librarymodel = new Library();
             int search;
             if (model.item == "Movie")
